@@ -1,0 +1,199 @@
+/* body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.diary-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.entries {
+    margin-top: 20px;
+}
+
+.entry-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.entry-card h3 {
+    margin: 0;
+}
+
+.entry-card p {
+    color: #555;
+}
+
+.entry-card button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #C890A7;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: flex-start;  /* Align to the top */
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    flex-direction: column;
+    
+    margin: 0;  /* Ensures no extra margin around body */
+}
+
+/* Heading styling - Full width title */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 30px;
+    padding: 10px 0; /* Padding for top and bottom */
+    background-color: #A35C7A;
+    font-family: 'Roboto', sans-serif;
+    width: 100%; /* Make title span the full width of the screen */
+    margin-bottom: 20px; /* Space after the title */
+    border-radius: 0; /* No rounded corners, span full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Title input and content textarea styling */
+input[type="text"],
+textarea {
+    width: 60%; /* Restricting width to create cute, centered rectangles */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #FBF5E5;
+    background-color: #FBF5E5;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Title input specific styling */
+input[type="text"] {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Textarea specific styling */
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    background-color: #A35C7A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 60%; /* Button same width as input fields */
+    transition: background-color 0.3s;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #212121;
+}
+
+/* Entries container styling (4 cards per row) */
+#entries-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 20px; /* Space between cards */
+    width: 100%; /* Ensure entries container spans full width */
+}
+
+/* Entry card styling */
+.entry-card {
+    background-color: #FBF5E5;
+    padding: 15px; /* Increased padding inside the entry card */
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Entry card header styling */
+.entry-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Entry card content styling */
+.entry-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Delete button in the entry card */
+.entry-card button {
+    background-color: #f44336;
+    font-size: 14px;
+    width: auto;
+    padding: 5px 10px;
+}
+
+.entry-card button:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+    #entries-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    }
+}
+
+@media (max-width: 900px) {
+    #entries-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    #entries-container {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+}

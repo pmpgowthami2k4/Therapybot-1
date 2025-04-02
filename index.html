@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Bot</title>
+
+    <!-- Bootstrap & Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome (Use ONLY CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="diarystyles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button id="menu-toggle">☰</button>
+        <h2 class="navbar-title">
+            <a href="index.html" style="text-decoration: none; color: white;">Dr. Druggs : The Therapy Bot</a>
+        </h2>
+        
+        <div class="icons">
+            <button class="icon-btn"><i class="fas fa-bell"></i></button>
+            <button class="icon-btn"><i class="fas fa-user"></i></button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="distraction.html" class="nav-link">Distraction Zone</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showFeelGoodList()">Feel Good Lists</a></li> <!-- ✅ FIXED -->
+                <li class="nav-item"><a href="therapists.html" class="nav-link">Therapist at Your Service</a></li>
+                <li><a href="http://127.0.0.1:5001" class="nav-link">Escape Cavity</a></li>
+                <li class="nav-item"><a href="diary.html" class="nav-link">Dear Diary</a></li>
+                <li class="nav-item"><a href="future.html" class="nav-link">Like-Minded Community </a></li>
+                <li class="nav-item"><a href="future.html" class="nav-link">Story board</a></li>
+            </ul>
+            
+        </div>
+
+        <!-- Chatbot Interface -->
+        <div id="chat-container">
+            <div id="chat-box"></div>
+            <div class="input-group">
+                <input type="text" id="user-input" class="form-control" placeholder="Type a message...">
+                <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feel-Good Lists Modal -->
+<div id="feel-good-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeFeelGoodList()">&times;</span>
+        <h2>🌟 Feel-Good Lists 🌟</h2>
+        
+        <!-- ✅ Add This Div -->
+        <div id="feel-good-content">
+            <p>Loading...</p>
+        </div>
+
+        <!-- User Customizable Lists -->
+        <div class="list-section-container">
+            <div class="list-section">
+                <h4>📚 Favorite Novels</h4>
+                <ul id="novel-list"></ul>
+                <input type="text" id="novel-input" placeholder="Add a novel">
+                <button onclick="addToList('novel')">➕ Add</button>
+            </div>
+        
+            <div class="list-section">
+                <h4>🎬 Favorite Movies</h4>
+                <ul id="movie-list"></ul>
+                <input type="text" id="movie-input" placeholder="Add a movie">
+                <button onclick="addToList('movie')">➕ Add</button>
+            </div>
+        
+            <div class="list-section">
+                <h4>🎵 Favorite Playlists</h4>
+                <ul id="playlist-list"></ul>
+                <input type="text" id="playlist-input" placeholder="Add a playlist">
+                <button onclick="addToList('playlist')">➕ Add</button>
+            </div>
+        </div>
+
+
+
+
+    <!-- Scripts (Load at the Bottom) -->
+    <!-- Firebase SDK Scripts -->
+    <!-- Firebase SDK -->
+<script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
